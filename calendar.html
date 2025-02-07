@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+    <style>
+        .fc-event-title {{
+            white-space: normal !important;
+            font-family: 'Arial', sans-serif !important;
+            font-size: 10px !important; /* Smaller font size for event titles */
+            font-weight: 400 !important; /* Lighter font weight */
+            color: white !important;
+        }}
+        .fc-event {{
+            padding: 2px !important; /* Reduced padding for better fit */
+            font-family: 'Arial', sans-serif !important;
+            font-size: 10px !important; /* Match font size */
+        }}
+        .fc-toolbar-title {{
+            font-family: 'Arial', sans-serif !important;
+            font-size: 20px !important;
+            font-weight: bold !important;
+        }}
+        .fc-daygrid-day-frame {{
+            height: auto !important;
+        }}
+    </style>
+</head>
+<body>
+    <div id="calendar"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {{
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {{
+                initialView: 'dayGridMonth',
+                events: {events}
+            }});
+            calendar.render();
+        }});
+    </script>
+</body>
+</html>
+        
